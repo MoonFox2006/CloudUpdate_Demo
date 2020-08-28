@@ -7,10 +7,10 @@ const bool BTN_LEVEL = LOW;
 const uint8_t LED_PIN = 16;
 const bool LED_LEVEL = LOW;
 
-const char WIFI_SSID[] PROGMEM = "GLBWLAN";
-const char WIFI_PSWD[] PROGMEM = "4991871740";
+const char WIFI_SSID[] PROGMEM = "******";
+const char WIFI_PSWD[] PROGMEM = "******";
 
-const char SCRIPT_URL[] PROGMEM = "https://script.google.com/macros/s/AKfycbwEjOB2vOxPKfDcWWrWD5S_pmyeNiTS16Oyy8gcaoOJPmeSHBLy/exec";
+const char SCRIPT_URL[] PROGMEM = "https://script.google.com/macros/s/******/exec";
 
 bool wifiConnect(const char *wifi_ssid, const char *wifi_pswd, uint32_t timeout = 30000) {
   char _wifi_ssid[strlen_P(wifi_ssid) + 1], _wifi_pswd[strlen_P(wifi_pswd) + 1];

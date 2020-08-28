@@ -48,7 +48,7 @@ function openFile(folderName, fileName) {
 }
 
 function findFirmware(config, platform, mac, md5) {
-  let lines = String(config).split('\n');
+  let lines = String(config).split('\r\n');
 
   for (let i = 0; i < lines.length; ++i) {
     let line = lines[i];

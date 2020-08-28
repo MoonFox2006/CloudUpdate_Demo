@@ -2,9 +2,7 @@
 #include <ESP8266WiFi.h>
 #include "CloudUpdate.h"
 
-const uint8_t BTN_PIN = 0;
-const bool BTN_LEVEL = LOW;
-const uint8_t LED_PIN = 16;
+const uint8_t LED_PIN = 2;
 const bool LED_LEVEL = LOW;
 
 const char WIFI_SSID[] PROGMEM = "******";
@@ -45,7 +43,6 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
 
-  pinMode(BTN_PIN, INPUT);
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, ! LED_LEVEL);
 
@@ -76,10 +73,8 @@ void setup() {
 }
 
 void loop() {
-  static bool lastBtn = false;
-
-  if ((digitalRead(BTN_PIN) == BTN_LEVEL) != lastBtn) {
-    lastBtn = ! lastBtn;
-    digitalWrite(LED_PIN, LED_LEVEL == lastBtn);
-  }
+  digitalWrite(LED_PIN, LED_LEVEL);
+  delay(25);
+  digitalWrite(LED_PIN, ! LED_LEVEL);
+  delay(1000 - 25);
 }
